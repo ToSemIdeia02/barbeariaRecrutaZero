@@ -1,6 +1,8 @@
 import queue
 from Barber import Barber
 from Customer import Customer
+from random import randint
+
 
 def sleeping_barber(barber):
     # While the barber is not sleeping
@@ -17,7 +19,12 @@ def sleeping_barber(barber):
         else:
             barber.cut_hair(customer)
 
-def customer() -> object | None:
+
+def sargent():
+    return randint(1, 5)
+
+
+def customer():
     # Create a new customer
     customer = Customer()
 
@@ -32,6 +39,7 @@ def customer() -> object | None:
 
     # Wait for the barber to signal that the customer's hair has been cut
     barber.wait()
+
 
 if __name__ == "__main__":
     # Create a barber
@@ -49,6 +57,7 @@ if __name__ == "__main__":
 
     # Start the barber thread
     import threading
+
     barber_thread = threading.Thread(target=sleeping_barber, args=(barber,))
     barber_thread.start()
 
