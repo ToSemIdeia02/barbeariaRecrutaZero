@@ -1,3 +1,5 @@
+import queue
+
 class Barber:
     def __init__(self):
         self.customer = None
