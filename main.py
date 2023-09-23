@@ -20,7 +20,7 @@ def sleeping_barber(barber):
             barber.cut_hair(customer)
 
 
-def sargent():
+def sargent_timer():
     return randint(1, 5)
 
 
